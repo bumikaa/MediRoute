@@ -1,0 +1,12 @@
+MediRoute sample run
+====================
+Search: paracetmol
+Did you mean: Paracetamol (edit distance=1)
+Emergency keywords: urgent, oxygen, icu
+Priority: HIGH / EMERGENCY
+Supply network max flow: 400 units
+Shortest route to hospital: 13 km
+Maximum hospital-supply matching: 3
+Damerau distance(paracetmaol, paracetamol): 1
+Parallel sum: 150
+Prefix scan: [10, 30, 60, 100]

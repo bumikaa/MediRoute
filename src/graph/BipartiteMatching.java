@@ -1,0 +1,3 @@
+package graph;
+import java.util.*;
+public class BipartiteMatching { private final List<Integer>[] g;private final int[] match,seen;private int stamp;@SuppressWarnings("unchecked") public BipartiteMatching(int n){g=new List[n];for(int i=0;i<n;i++)g[i]=new ArrayList<>();match=new int[n];Arrays.fill(match,-1);seen=new int[n];}public void addEdge(int left,int right){g[left].add(right);}private boolean dfs(int u){for(int v:g[u])if(seen[v]!=stamp){seen[v]=stamp;if(match[v]==-1||dfs(match[v])){match[v]=u;return true;}}return false;}public int maximumMatching(){int count=0;for(int u=0;u<g.length;u++){stamp++;if(dfs(u))count++;}return count;}public int[] matches(){return match;} }

@@ -1,0 +1,3 @@
+package services;
+import graph.*;import java.util.*;
+public class SupplyAllocationService { public static void allocate(){int[][] c={{0,500,300,0,0},{0,0,0,300,200},{0,0,0,100,200},{0,0,0,0,0},{0,0,0,0,0}};int max=EdmondsKarp.maxFlow(c,0,3);System.out.println("\nSupply network max flow = "+max+" units");System.out.println("Warehouse -> Distribution -> Hospital capacity is optimized using Edmonds-Karp.");}public static void matchHospitals(){BipartiteMatching bm=new BipartiteMatching(3);bm.addEdge(0,0);bm.addEdge(0,1);bm.addEdge(1,1);bm.addEdge(1,2);bm.addEdge(2,0);int m=bm.maximumMatching();System.out.println("\nMaximum hospital-supply matching = "+m);System.out.println("Matching is represented as a bipartite graph.");} }

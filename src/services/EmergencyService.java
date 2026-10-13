@@ -1,0 +1,3 @@
+package services;
+import java.util.*;import stringalgo.AhoCorasick;import utils.InputUtil;
+public class EmergencyService { public static void checkRequest(Scanner sc){String hospital=InputUtil.readLine(sc,"Hospital: ");String text=InputUtil.readLine(sc,"Request: ");AhoCorasick ac=new AhoCorasick();for(String k:List.of("emergency","urgent","icu","oxygen","ventilator","blood","critical"))ac.add(k);ac.build();List<String> hits=ac.find(text);System.out.println("Detected keywords: "+new LinkedHashSet<>(hits));System.out.println(hits.isEmpty()?"Priority: NORMAL":"Priority: HIGH / EMERGENCY");System.out.println("Request registered for "+hospital+".");} }
